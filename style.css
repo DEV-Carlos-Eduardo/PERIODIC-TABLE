@@ -3,3 +3,276 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: 'Spartan', sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#periodic_table {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0 20px;
+  padding: 10px;
+  display: grid;
+  gap: 3px;
+  grid-template-columns: 30px repeat(18, 1fr);
+  grid-template-rows: 30px repeat(7, 1fr) 10px repeat(2, 1fr);
+  grid-template-areas:
+    "... c01 ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... c18"
+    "r01 H   c02 ... ... ... ... ... ... ... ... ... ... c13 c14 c15 c16 c17 He "
+    "r02 Li  Be  ... ... ... ... ... ... ... ... ... ... B   C   N   O   F   Ne "
+    "r03 Na  Mg  c03 c04 c05 c06 c07 c08 c09 c10 c11 c12 Al  Si  P   S   Cl  Ar "
+    "r04 K   Ca  Sc  Ti  V   Cr  Mn  Fe  Co  Ni  Cu  Zn  Ga  Ge  As  Se  Br  Kr "
+    "r05 Rb  Sr  Y   Zr  Nb  Mo  Tc  Ru  Rh  Pd  Ag  Cd  In  Sn  Sb  Te  I   Xe "
+    "r06 Cs  Ba  ... Hf  Ta  W   Re  Os  Ir  Pt  Au  Hg  Tl  Pb  Bi  Po  At  Rn "
+    "r07 Fr  Ra  ... Rf  Db  Sg  Bh  Hs  Mt  Ds  Rg  Cn  Nh  Fl  Mc  Lv  Ts  Og "
+    "... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ..."
+    "... ... ... La  Ce  Pr  Nd  Pm  Sm  Eu  Gd  Tb  Dy  Ho  Er  Tm  Yb  Lu  ..."
+    "... ... ... Ac  Th  Pa  U   Np  Pu  Am  Cm  Bk  Cf  Es  Fm  Md  No  Lr  ...";
+}
+
+.element {
+  min-height: 53.5px;
+  min-width: 63px;
+  border-radius: 2px;
+  color: white;
+}
+
+.element_head {
+  height: 15%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.atomic_number {
+  font-size: 8px;
+
+  position: relative;
+  top: 4px;
+  left: 1px;
+}
+
+.element_body {
+  height: 65%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.symbol {
+  line-height: 20px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.name {
+  font-size: 7.5px;
+  font-weight: 600;
+}
+
+.element_footer {
+  height: 20%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relative_atomic_mass {
+  font-size: 8px;
+}
+
+.number {
+  padding: 5px 15px;
+  color: #242036;
+  font-size: calc(0.5vw 5px);
+  font-weight: 600;
+  display: flex;
+}
+
+.column {
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.column:nth-child(1) {grid-area: c01}
+.column:nth-child(2) {grid-area: c02}
+.column:nth-child(3) {grid-area: c03}
+.column:nth-child(4) {grid-area: c04}
+.column:nth-child(5) {grid-area: c05}
+.column:nth-child(6) {grid-area: c06}
+.column:nth-child(7) {grid-area: c07}
+.column:nth-child(8) {grid-area: c08}
+.column:nth-child(9) {grid-area: c09}
+.column:nth-child(10) {grid-area: c10}
+.column:nth-child(11) {grid-area: c11}
+.column:nth-child(12) {grid-area: c12}
+.column:nth-child(13) {grid-area: c13}
+.column:nth-child(14) {grid-area: c14}
+.column:nth-child(15) {grid-area: c15}
+.column:nth-child(16) {grid-area: c16}
+.column:nth-child(17) {grid-area: c17}
+.column:nth-child(18) {grid-area: c18}
+
+.row {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.row:nth-child(19) {grid-area: r01}
+.row:nth-child(20) {grid-area: r02}
+.row:nth-child(21) {grid-area: r03}
+.row:nth-child(22) {grid-area: r04}
+.row:nth-child(23) {grid-area: r05}
+.row:nth-child(24) {grid-area: r06}
+.row:nth-child(25) {grid-area: r07}
+
+#H {grid-area: H}
+#He {grid-area: He}
+#Li {grid-area: Li}
+#Be {grid-area: Be}
+#B {grid-area: B}
+#C {grid-area: C}
+#N {grid-area: N}
+#O {grid-area: O}
+#F {grid-area: F}
+#Ne {grid-area: Ne}
+#Na {grid-area: Na}
+#Mg {grid-area: Mg}
+#Al {grid-area: Al}
+#Si {grid-area: Si}
+#P {grid-area: P}
+#S {grid-area: S}
+#Cl {grid-area: Cl}
+#Ar {grid-area: Ar}
+#K {grid-area: K}
+#Ca {grid-area: Ca}
+#Sc {grid-area: Sc}
+#Ti {grid-area: Ti}
+#V {grid-area: V}
+#Cr {grid-area: Cr}
+#Mn {grid-area: Mn}
+#Fe {grid-area: Fe}
+#Co {grid-area: Co}
+#Ni {grid-area: Ni}
+#Cu {grid-area: Cu}
+#Zn {grid-area: Zn}
+#Ga {grid-area: Ga}
+#Ge {grid-area: Ge}
+#As {grid-area: As}
+#Se {grid-area: Se}
+#Br {grid-area: Br}
+#Kr {grid-area: Kr}
+#Rb {grid-area: Rb}
+#Sr {grid-area: Sr}
+#Y {grid-area: Y}
+#Zr {grid-area: Zr}
+#Nb {grid-area: Nb}
+#Mo {grid-area: Mo}
+#Tc {grid-area: Tc}
+#Ru {grid-area: Ru}
+#Rh {grid-area: Rh}
+#Pd {grid-area: Pd}
+#Ag {grid-area: Ag}
+#Cd {grid-area: Cd}
+#In {grid-area: In}
+#Sn {grid-area: Sn}
+#Sb {grid-area: Sb}
+#Te {grid-area: Te}
+#I {grid-area: I}
+#Xe {grid-area: Xe}
+#Cs {grid-area: Cs}
+#Ba {grid-area: Ba}
+#La {grid-area: La}
+#Ce {grid-area: Ce}
+#Pr {grid-area: Pr}
+#Nd {grid-area: Nd}
+#Pm {grid-area: Pm}
+#Sm {grid-area: Sm}
+#Eu {grid-area: Eu}
+#Gd {grid-area: Gd}
+#Tb {grid-area: Tb}
+#Dy {grid-area: Dy}
+#Ho {grid-area: Ho}
+#Er {grid-area: Er}
+#Tm {grid-area: Tm}
+#Yb {grid-area: Yb}
+#Lu {grid-area: Lu}
+#Hf {grid-area: Hf}
+#Ta {grid-area: Ta}
+#W {grid-area: W}
+#Re {grid-area: Re}
+#Os {grid-area: Os}
+#Ir {grid-area: Ir}
+#Pt {grid-area: Pt}
+#Au {grid-area: Au}
+#Hg {grid-area: Hg}
+#Tl {grid-area: Tl}
+#Pb {grid-area: Pb}
+#Bi {grid-area: Bi}
+#Po {grid-area: Po}
+#At {grid-area: At}
+#Rn {grid-area: Rn}
+#Fr {grid-area: Fr}
+#Ra {grid-area: Ra}
+#Ac {grid-area: Ac}
+#Th {grid-area: Th}
+#Pa {grid-area: Pa}
+#U {grid-area: U}
+#Np {grid-area: Np}
+#Pu {grid-area: Pu}
+#Am {grid-area: Am}
+#Cm {grid-area: Cm}
+#Bk {grid-area: Bk}
+#Cf {grid-area: Cf}
+#Es {grid-area: Es}
+#Fm {grid-area: Fm}
+#Md {grid-area: Md}
+#No {grid-area: No}
+#Lr {grid-area: Lr}
+#Rf {grid-area: Rf}
+#Db {grid-area: Db}
+#Sg {grid-area: Sg}
+#Bh {grid-area: Bh}
+#Hs {grid-area: Hs}
+#Mt {grid-area: Mt}
+#Ds {grid-area: Ds}
+#Rg {grid-area: Rg}
+#Cn {grid-area: Cn}
+#Nh {grid-area: Nh}
+#Fl {grid-area: Fl}
+#Mc {grid-area: Mc}
+#Lv {grid-area: Lv}
+#Ts {grid-area: Ts}
+#Og {grid-area: Og}
+
+[data-group="alkali_metals"] {background-color: #F37125;}
+
+[data-group="alkaline_earth_metals"] {background-color: #FFC00E;}
+
+[data-group="transition_metals"] {background-color: #9c15d1;}
+
+[data-group="lanthanides"] {background-color: #1aad2e;}
+
+[data-group="actinides"] {background-color: #ff0000;}
+
+[data-group="post-transition_metals"] {background-color: #2CBBED;}
+
+[data-group="reactive_nonmetals"] {background-color: #E22791;}
+
+[data-group="halogens"] {background-color: #ff044f;}
+
+[data-group="metalloids"] {background-color: #4c0177;}
+
+[data-group="noble_gases"] {background-color: #373896;}
+
