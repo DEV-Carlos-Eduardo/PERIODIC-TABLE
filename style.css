@@ -9,16 +9,15 @@ body {
 }
 
 main {
+  width: 100%;
+  padding: 20px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #periodic_table {
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0 20px;
-  padding: 10px;
+  width: 100%;
   display: grid;
   gap: 3px;
   grid-template-columns: 30px repeat(18, 1fr);
@@ -38,9 +37,8 @@ main {
 }
 
 .element {
-  min-height: 53.5px;
-  min-width: 63px;
   border-radius: 2px;
+  padding: 3px;
   color: white;
 }
 
@@ -53,7 +51,7 @@ main {
 }
 
 .atomic_number {
-  font-size: 8px;
+  font-size: calc(.5vw + 2px);
 
   position: relative;
   top: 4px;
@@ -70,13 +68,14 @@ main {
 }
 
 .symbol {
-  line-height: 20px;
-  font-size: 18px;
+  font-size: calc(.7vw + 7px);
   font-weight: 900;
+  position: relative;
+  top: 1.5px;
 }
 
 .name {
-  font-size: 7.5px;
+  font-size: 8px;
   font-weight: 600;
 }
 
@@ -95,9 +94,12 @@ main {
 .number {
   padding: 5px 15px;
   color: #242036;
-  font-size: calc(0.5vw 5px);
+  font-size: calc(0.5vw + 10px);
   font-weight: 600;
   display: flex;
+  
+  position: relative;
+  top: 2px;
 }
 
 .column {
@@ -276,3 +278,42 @@ main {
 
 [data-group="noble_gases"] {background-color: #373896;}
 
+
+@media screen and (max-width: 1300px) {
+  .name {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #periodic_table {
+    gap: 2px;
+    grid-template-columns: 10px repeat(18, 1fr);
+    grid-template-rows: 20px repeat(7, 4vw) 10px repeat(2, 4vw);
+  }
+
+  .number {
+    font-size: calc(1vw + 5px);
+    padding: 5px 3px;
+  }
+
+  .element {
+    padding: 0;
+  }
+
+  .element_head {
+    display: none;
+  }
+
+  .element_body {
+    height: 100%;
+  }
+
+  .symbol {
+    font-size: calc(1.1vw + 4px);
+  }
+
+  .element_footer {
+    display: none;
+  }
+}
